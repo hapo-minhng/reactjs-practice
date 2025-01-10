@@ -29,7 +29,7 @@ export default function Examples() {
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
-          onSelect={function () {
+          onClick={function () {
             handleSelect("components");
           }}
         >
@@ -37,7 +37,7 @@ export default function Examples() {
         </TabButton>
         <TabButton
           isSelected={selectedTopic === "jsx"}
-          onSelect={function () {
+          onClick={function () {
             handleSelect("jsx");
           }}
         >
@@ -45,7 +45,7 @@ export default function Examples() {
         </TabButton>
         <TabButton
           isSelected={selectedTopic === "props"}
-          onSelect={function () {
+          onClick={function () {
             handleSelect("props");
           }}
         >
@@ -53,7 +53,7 @@ export default function Examples() {
         </TabButton>
         <TabButton
           isSelected={selectedTopic === "state"}
-          onSelect={function () {
+          onClick={function () {
             handleSelect("state");
           }}
         >
