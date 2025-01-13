@@ -8,7 +8,21 @@ function App() {
   const [activePlayer, setActivePlayer] = useState("X");
 
   function handlePlayer() {
-    setActivePlayer((currPlayer) => (currPlayer === "X" ? "O" : "X"));
+    setActivePlayer((currActivePlayer) => (currActivePlayer === "X" ? "O" : "X"));
+    setGameTurns((prevTurns) => {
+      let currPlayer = "X";
+
+      if (prevTurns.length > 0 && prevTurns[0].player === "X") {
+        currPlayer = "O";
+      }
+
+      const updatedTurns = [
+        { square: { row: rowIndex, col: colIndex }, player: activePlayer },
+        ...prevTurns,
+      ];
+
+      return updatedTurns;
+    });
   }
 
   return (
