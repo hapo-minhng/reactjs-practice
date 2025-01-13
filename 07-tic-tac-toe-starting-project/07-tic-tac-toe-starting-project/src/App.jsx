@@ -7,7 +7,7 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, setActivePlayer] = useState("X");
 
-  function handlePlayer() {
+  function handlePlayer(rowIndex, colIndex) {
     setActivePlayer((currActivePlayer) => (currActivePlayer === "X" ? "O" : "X"));
     setGameTurns((prevTurns) => {
       let currPlayer = "X";
@@ -17,7 +17,7 @@ function App() {
       }
 
       const updatedTurns = [
-        { square: { row: rowIndex, col: colIndex }, player: activePlayer },
+        { square: { row: rowIndex, col: colIndex }, player: currPlayer },
         ...prevTurns,
       ];
 
@@ -43,7 +43,7 @@ function App() {
 
         <GameBoard
           onSelectSquare={handlePlayer}
-          activePlayerSymbol={activePlayer}
+          turns={gameTurns}
         />
       </div>
 
