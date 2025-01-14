@@ -16,9 +16,16 @@ function deriveActivePlayer(gameTurns) {
 
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
+  // const [hasWinner, setHasWinner] = useState(false);
   // const [activePlayer, setActivePlayer] = useState("X");
 
   const activePlayer = deriveActivePlayer(gameTurns);
+
+  for (const combination of WINNING_COMBINATIONS) {
+    const firstSquareSymbol = gameBoard;
+    const secondSquareSymbol = gameBoard;
+    const thirdSquareSymbol = gameBoard;
+  }
 
   function handlePlayer(rowIndex, colIndex) {
     // setActivePlayer((currActivePlayer) => (currActivePlayer === "X" ? "O" : "X"));
